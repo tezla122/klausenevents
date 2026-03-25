@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
-const PHONE_DISPLAY = '+40 755 123 456'
-const PHONE_TEL = 'tel:+40755123456'
+const PHONE_DISPLAY = '0748 148 358 | 0728 293 606'
+const PHONE_TEL = 'tel:+40748148358'
 
 function PhoneIcon({ className }: { className?: string }) {
   return (
