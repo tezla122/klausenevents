@@ -34,7 +34,7 @@ const IMAGE_FILES = [
 export const HERO_IMAGE = '/images/1000015675.jpg'
 
 const tile = (mdMinH: string) =>
-  `col-span-1 min-h-[150px] sm:min-h-[170px] md:col-span-4 ${mdMinH}`
+  `col-span-1 min-h-[200px] sm:min-h-[180px] md:col-span-4 ${mdMinH}`
 
 const parallaxCycle = [18, -14, 20, -18, 16, -22, 14, -16, 19, -12, 17, -20, 15, -13]
 

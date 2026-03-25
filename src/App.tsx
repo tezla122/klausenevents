@@ -7,7 +7,10 @@ import { AppLayout } from './components/Layout/AppLayout'
 
 function App() {
   return (
-    <div id="top" className="min-h-dvh bg-white text-neutral-900 antialiased">
+    <div
+      id="top"
+      className="min-h-dvh overflow-x-hidden bg-white text-neutral-900 antialiased"
+    >
       <ScrollProgress />
       <AppLayout>
         <Hero />

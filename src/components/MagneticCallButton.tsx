@@ -65,8 +65,8 @@ export function MagneticCallButton({
 
   const padding =
     size === 'hero'
-      ? 'px-8 py-6 sm:px-12 sm:py-7 text-lg sm:text-xl'
-      : 'px-5 py-3.5 text-sm sm:text-base'
+      ? 'min-h-[44px] px-6 py-4 text-base sm:px-12 sm:py-7 sm:text-lg md:text-xl'
+      : 'min-h-[44px] px-6 py-3.5 text-sm sm:text-base'
 
   const isVip = variant === 'vip'
 
@@ -74,7 +74,7 @@ export function MagneticCallButton({
     <motion.a
       ref={ref}
       href={PHONE_TEL}
-      className={`relative inline-flex max-w-full items-center justify-center overflow-hidden rounded-2xl font-semibold tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${
+      className={`relative inline-flex max-w-full min-w-0 items-center justify-center overflow-hidden rounded-2xl font-semibold tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 ${
         isVip
           ? 'border border-[#FF0000] bg-[#FF0000] text-white shadow-[0_18px_60px_-35px_rgba(255,0,0,0.55)] backdrop-blur-sm focus-visible:outline-[#FF0000]/40'
           : 'border border-[#FF0000] bg-[#FF0000] text-white shadow-[0_18px_60px_-35px_rgba(255,0,0,0.55)] backdrop-blur-sm focus-visible:outline-[#FF0000]/40'

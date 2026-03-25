@@ -34,7 +34,7 @@ function GalleryTile({
     >
       <motion.div className="relative h-full w-full" style={{ y, willChange: 'transform' }}>
         <motion.div
-          className="relative h-full w-full min-h-[160px] overflow-hidden sm:min-h-[180px]"
+          className="relative h-full w-full min-h-[192px] overflow-hidden sm:min-h-[200px] md:min-h-[160px]"
           initial="rest"
           whileHover="hover"
         >
@@ -83,13 +83,13 @@ export function AtmosphereGallery() {
   return (
     <section
       id="atmosphere"
-      className="relative border-t border-[#FF0000]/10 bg-white py-20 sm:py-28"
+      className="relative border-t border-[#FF0000]/10 bg-white py-12 sm:py-16 lg:py-24"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(255,0,0,0.08),transparent)]" />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="mb-14 max-w-3xl"
+          className="mb-10 max-w-3xl sm:mb-14"
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -98,16 +98,16 @@ export function AtmosphereGallery() {
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#FF0000]">
             The atmosphere
           </p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-[clamp(1.85rem,4.5vw,3rem)] font-bold tracking-[-0.03em] text-[#FF0000]">
+          <h2 className="mt-3 font-[family-name:var(--font-display)] text-2xl font-bold tracking-[-0.03em] text-[#FF0000] sm:text-3xl lg:text-[clamp(1.85rem,4.5vw,3rem)]">
             A vibe showcase
           </h2>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-neutral-900/70">
+          <p className="mx-auto mt-4 max-w-prose text-left text-sm leading-relaxed text-neutral-900/70 sm:text-base md:mx-0 md:text-lg">
             Hover the frames to feel the energy. The border blooms in red and the photo lifts slightly for a crisp,
             editorial reveal.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-2.5 sm:gap-3 md:grid-cols-12 md:gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 md:grid-cols-12 md:gap-4 lg:gap-8">
           {GALLERY_IMAGES.map((image, index) => (
             <motion.div
               key={image.id}
