@@ -23,15 +23,12 @@ function GalleryTile({
     [image.parallaxY, -image.parallaxY],
   )
 
-  const dimOthers = hoveredId !== null && hoveredId !== image.id
+  const isActive = hoveredId === image.id
 
   return (
     <motion.div
       ref={ref}
-      className="relative h-full min-h-0 overflow-hidden rounded-2xl border border-white/10 bg-charcoal-900 shadow-[0_24px_80px_-32px_rgba(0,0,0,0.85)]"
-      animate={{ opacity: dimOthers ? 0.38 : 1 }}
-      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      style={{ willChange: 'opacity' }}
+      className="relative h-full min-h-0 rounded-2xl bg-white shadow-[0_18px_60px_-40px_rgba(255,0,0,0.35)]"
       onHoverStart={() => onHoverChange(image.id)}
       onHoverEnd={() => onHoverChange(null)}
     >
@@ -50,9 +47,9 @@ function GalleryTile({
             variants={{
               rest: { scale: 1 },
               hover: {
-                scale: 1.07,
+                scale: 1.1,
                 transition: {
-                  duration: 0.95,
+                  duration: 0.6,
                   ease: [0.22, 1, 0.36, 1],
                 },
               },
@@ -61,10 +58,21 @@ function GalleryTile({
           />
         </motion.div>
         <div
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-black/15"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#FF0000]/18 via-transparent to-transparent"
           aria-hidden
         />
       </motion.div>
+
+      {/* Thick red border that expands on hover */}
+      <motion.span
+        className="pointer-events-none absolute rounded-2xl border-4 border-[#FF0000]"
+        initial={{ inset: '0px', opacity: 0 }}
+        animate={{
+          inset: isActive ? '-4px' : '0px',
+          opacity: isActive ? 1 : 0,
+        }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      />
     </motion.div>
   )
 }
@@ -75,9 +83,9 @@ export function AtmosphereGallery() {
   return (
     <section
       id="atmosphere"
-      className="relative border-t border-white/5 bg-black py-20 sm:py-28"
+      className="relative border-t border-[#FF0000]/10 bg-white py-20 sm:py-28"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(251,191,36,0.06),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,rgba(255,0,0,0.08),transparent)]" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <motion.div
@@ -87,25 +95,15 @@ export function AtmosphereGallery() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-amber-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#FF0000]">
             The atmosphere
           </p>
-          <h2 className="mt-3 font-[family-name:var(--font-display)] text-[clamp(1.85rem,4.5vw,3rem)] font-bold tracking-[-0.03em] text-zinc-50">
+          <h2 className="mt-3 font-[family-name:var(--font-display)] text-[clamp(1.85rem,4.5vw,3rem)] font-bold tracking-[-0.03em] text-[#FF0000]">
             A vibe showcase
           </h2>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-zinc-400">
-            
-            <code className="rounded bg-white/5 px-1.5 py-0.5 text-sm text-amber-200/90">
-             
-            </code>
-            
-            <code className="rounded bg-white/5 px-1.5 py-0.5 text-sm text-zinc-400">
-              
-            </code>
-            
-            <code className="rounded bg-white/5 px-1.5 py-0.5 text-sm text-zinc-400">
-            </code>
-            
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-neutral-900/70">
+            Hover the frames to feel the energy. The border blooms in red and the photo lifts slightly for a crisp,
+            editorial reveal.
           </p>
         </motion.div>
 

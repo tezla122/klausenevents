@@ -21,7 +21,7 @@ export function WhySection() {
   return (
     <section
       id="why"
-      className="bg-charcoal-950 py-20 sm:py-28"
+      className="bg-white py-20 sm:py-28"
       aria-labelledby="why-heading"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -34,11 +34,11 @@ export function WhySection() {
         >
           <h2
             id="why-heading"
-            className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.75rem)] font-bold tracking-[-0.03em] text-zinc-50"
+            className="font-[family-name:var(--font-display)] text-[clamp(1.75rem,4vw,2.75rem)] font-bold tracking-[-0.03em] text-neutral-900"
           >
             Why KlausenBurger
           </h2>
-          <p className="mt-3 text-lg text-zinc-500">
+          <p className="mt-3 text-lg text-neutral-900/70">
             Built for hosts who want a private venue with character—and craft
             behind every pour.
           </p>
@@ -57,14 +57,14 @@ export function WhySection() {
               variants={item}
               className="sm:col-span-4"
             >
-              <div className="flex flex-col gap-3 border-l border-amber-500/35 pl-6">
-                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-500/90">
+              <div className="flex flex-col gap-3 border-l border-[#FF0000]/30 pl-6">
+                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#FF0000]/90">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <h3 className="font-[family-name:var(--font-display)] text-xl font-semibold tracking-tight text-zinc-100">
+                <h3 className="font-[family-name:var(--font-display)] text-xl font-semibold tracking-tight text-neutral-900">
                   {point.title}
                 </h3>
-                <p className="text-base leading-relaxed text-zinc-400">
+                <p className="text-base leading-relaxed text-neutral-900/70">
                   {point.body}
                 </p>
               </div>

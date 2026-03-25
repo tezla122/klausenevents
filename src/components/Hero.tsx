@@ -26,50 +26,36 @@ export function Hero() {
     target: sectionRef,
     offset: ['start start', 'end start'],
   })
-  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '10%'])
-  const heroDim = useTransform(scrollYProgress, [0, 0.9], [0.55, 0.78])
+  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '-6%'])
+  const imageParallaxY = useTransform(scrollYProgress, [0, 1], ['0%', '10%'])
 
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-screen flex-col justify-end overflow-hidden px-5 pb-16 pt-28 sm:justify-center sm:px-8 sm:pb-24 sm:pt-20"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-white px-5 pb-16 pt-10 sm:px-8 sm:pb-24 sm:pt-8"
     >
-      {/* Ken Burns background */}
       <div className="pointer-events-none absolute inset-0">
-        <motion.img
-          src={HERO_IMAGE}
-          alt=""
-          className="h-full w-full object-cover"
-          initial={{ scale: 1.05 }}
-          animate={{ scale: 1.12 }}
-          transition={{
-            duration: 28,
-            repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'linear',
-          }}
-          decoding="async"
-          style={{ willChange: 'transform' }}
-        />
-
-        {/* Readability: dark band behind typography + bottom anchor for mobile */}
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-transparent"
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent sm:from-black/50"
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0 bg-[radial-gradient(ellipse_85%_65%_at_50%_45%,rgba(0,0,0,0.55),transparent_70%)]"
-          aria-hidden
-        />
-
+        {/* Off-center, frameless hero image that bleeds off the viewport */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/55 to-transparent"
-          style={{ opacity: heroDim }}
-        />
+          className="absolute left-[45%] top-[-22%] h-[150%] w-[120%] overflow-hidden"
+          style={{ y: imageParallaxY }}
+        >
+          <motion.img
+            src={HERO_IMAGE}
+            alt=""
+            className="h-full w-full object-cover object-[center_35%]"
+            initial={{ scale: 1.06 }}
+            animate={{ scale: 1.16 }}
+            transition={{
+              duration: 26,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: 'linear',
+            }}
+            decoding="async"
+            style={{ willChange: 'transform' }}
+          />
+        </motion.div>
       </div>
 
       <motion.div
@@ -77,7 +63,7 @@ export function Hero() {
         style={{ y: contentY }}
       >
         <motion.p
-          className="mb-5 text-xs font-medium uppercase tracking-[0.4em] text-white/70 sm:text-sm"
+          className="mb-5 text-xs font-medium uppercase tracking-[0.4em] text-[#FF0000]/85 sm:text-sm"
           custom={0}
           initial="hidden"
           animate="show"
@@ -87,7 +73,7 @@ export function Hero() {
         </motion.p>
 
         <motion.h1
-          className="font-playfair text-6xl font-semibold leading-[1.05] tracking-tighter text-white/95 mix-blend-soft-light md:text-8xl"
+          className="font-playfair text-8xl font-semibold leading-[0.9] tracking-[-0.05em] text-[#FF0000] mix-blend-multiply drop-shadow-[0_0_28px_rgba(255,0,0,0.12)] sm:text-[5.25rem] md:text-[10rem]"
           custom={1}
           initial="hidden"
           animate="show"
@@ -97,7 +83,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.p
-          className="mt-8 max-w-2xl font-[family-name:var(--font-display)] text-lg leading-relaxed text-white/80 sm:text-xl"
+          className="mt-8 max-w-2xl font-[family-name:var(--font-display)] text-lg leading-relaxed text-neutral-900/70 sm:text-xl"
           custom={2}
           initial="hidden"
           animate="show"
@@ -115,11 +101,11 @@ export function Hero() {
         >
           <MagneticCallButton
             size="hero"
-            variant="glass"
+            variant="vip"
             className="w-full sm:w-auto"
             labelPrefix="Call to Book Your Event: "
           />
-          <p className="max-w-md font-[family-name:var(--font-display)] text-sm leading-relaxed text-gray-300">
+          <p className="max-w-md font-[family-name:var(--font-display)] text-sm leading-relaxed text-neutral-900/70">
             This venue is reserved for private bookings. No forms—speak with
             our team directly to plan your night.
           </p>

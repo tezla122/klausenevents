@@ -22,21 +22,21 @@ function PhoneIcon({ className }: { className?: string }) {
 
 export function FooterCTA() {
   return (
-    <footer className="relative overflow-hidden border-t border-amber-500/20 bg-black py-20 sm:py-28">
+    <footer className="relative overflow-hidden border-t border-[#FF0000]/15 bg-white py-20 sm:py-28">
       <motion.div
-        className="pointer-events-none absolute -left-1/4 top-1/2 h-[120%] w-1/2 -translate-y-1/2 rounded-full bg-amber-500/10 blur-3xl"
+        className="pointer-events-none absolute -left-1/4 top-1/2 h-[120%] w-1/2 -translate-y-1/2 rounded-full bg-[#FF0000]/10 blur-3xl"
         animate={{ opacity: [0.35, 0.55, 0.35] }}
         transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
-        className="pointer-events-none absolute -right-1/4 bottom-0 h-[80%] w-1/2 rounded-full bg-cyan-500/10 blur-3xl"
+        className="pointer-events-none absolute -right-1/4 bottom-0 h-[80%] w-1/2 rounded-full bg-[#FF0000]/8 blur-3xl"
         animate={{ opacity: [0.25, 0.45, 0.25] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
       />
 
       <div className="relative z-10 mx-auto max-w-5xl px-5 text-center sm:px-8">
         <motion.h2
-          className="font-[family-name:var(--font-display)] text-[clamp(1.65rem,5vw,3.25rem)] font-bold leading-[1.12] tracking-[-0.03em] text-zinc-50"
+          className="font-[family-name:var(--font-display)] text-[clamp(1.65rem,5vw,3.25rem)] font-bold leading-[1.12] tracking-[-0.03em] text-neutral-900"
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
@@ -46,7 +46,7 @@ export function FooterCTA() {
         </motion.h2>
 
         <motion.p
-          className="mx-auto mt-6 max-w-xl text-lg text-zinc-400"
+          className="mx-auto mt-6 max-w-xl text-lg text-neutral-900/70"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -65,12 +65,12 @@ export function FooterCTA() {
         >
           <motion.a
             href={PHONE_TEL}
-            className="inline-flex max-w-full flex-wrap items-center justify-center gap-3 rounded-full border border-amber-400/50 bg-gradient-to-r from-amber-600/95 to-amber-500/95 px-8 py-5 text-lg font-bold tracking-tight text-black shadow-[0_0_0_0_rgba(251,191,36,0.5)] sm:px-14 sm:text-xl"
+            className="relative inline-flex max-w-full flex-wrap items-center justify-center gap-3 rounded-full border border-[#FF0000] bg-[#FF0000] px-8 py-5 text-lg font-bold tracking-tight text-white shadow-[0_0_0_0_rgba(255,0,0,0.5)] sm:px-14 sm:text-xl transition-colors"
             animate={{
               boxShadow: [
-                '0 0 0 0 rgba(251,191,36,0.55)',
-                '0 0 0 14px rgba(251,191,36,0)',
-                '0 0 0 0 rgba(251,191,36,0)',
+                '0 0 0 0 rgba(255,0,0,0.55)',
+                '0 0 0 14px rgba(255,0,0,0)',
+                '0 0 0 0 rgba(255,0,0,0)',
               ],
             }}
             transition={{
@@ -78,11 +78,11 @@ export function FooterCTA() {
               repeat: Infinity,
               ease: 'easeInOut',
             }}
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.03, backgroundColor: '#FFFFFF', color: '#FF0000' }}
             whileTap={{ scale: 0.98 }}
           >
             <motion.span
-              className="inline-flex text-black"
+              className="inline-flex"
               animate={{
                 rotate: [0, -14, 14, -10, 10, 0],
                 x: [0, -1, 1, -1, 0],
@@ -103,7 +103,7 @@ export function FooterCTA() {
         </motion.div>
 
         <motion.p
-          className="mt-10 text-xs uppercase tracking-[0.25em] text-zinc-600"
+          className="mt-10 text-xs uppercase tracking-[0.25em] text-neutral-500"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
