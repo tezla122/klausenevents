@@ -35,9 +35,19 @@ export function Hero() {
             KlausenBurger · Private events only
           </motion.p>
 
+          <motion.p
+            className="mb-3 max-w-xl font-[family-name:var(--font-display)] text-[0.65rem] font-semibold uppercase leading-snug tracking-[0.28em] text-neutral-500 sm:mb-4 sm:text-xs sm:tracking-[0.32em] md:text-[0.7rem]"
+            custom={1}
+            initial="hidden"
+            animate="show"
+            variants={line}
+          >
+            Evenimente la înălțime în inima Clujului
+          </motion.p>
+
           <motion.h1
             className="font-playfair text-3xl font-semibold leading-[1.08] tracking-[-0.05em] text-[#FF0000] mix-blend-multiply drop-shadow-[0_0_28px_rgba(255,0,0,0.12)] sm:text-4xl sm:leading-none md:text-8xl md:tracking-[-0.06em] lg:text-[9rem] lg:leading-none"
-            custom={1}
+            custom={2}
             initial="hidden"
             animate="show"
             variants={line}
@@ -48,7 +58,7 @@ export function Hero() {
           <div className="mt-6 max-w-md md:max-w-[32rem]">
             <motion.p
               className="font-[family-name:var(--font-display)] text-sm leading-relaxed text-neutral-900 sm:text-base sm:leading-relaxed md:text-lg"
-              custom={2}
+              custom={3}
               initial="hidden"
               animate="show"
               variants={line}
@@ -59,7 +69,7 @@ export function Hero() {
 
           <motion.div
             className="mt-8 flex flex-col items-stretch gap-3 sm:gap-5"
-            custom={3}
+            custom={4}
             initial="hidden"
             animate="show"
             variants={line}
