@@ -49,7 +49,7 @@ export function WhySection() {
             className="font-playfair col-span-1 text-3xl font-semibold leading-[1.05] tracking-[-0.04em] text-[#FF0000] sm:text-5xl md:col-span-3 md:text-8xl md:leading-none"
             variants={item}
           >
-            De Ce KlausenBurger?
+            De Ce Klausen?
           </motion.h2>
 
           {/* Card 1 — Views */}
